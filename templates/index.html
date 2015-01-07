@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Nengo Editor</title>
+<script src="{{ static_url('js/jquery-1.11.0.min.js') }}" type="text/javascript"></script>
+<script src="{{ static_url('js/d3.min.js') }}" type="text/javascript"></script>
+
+<!-- second, jQuery UI Theme and jQuery UI itself is needed -->
+<link href="{{ static_url('jquery-ui/jquery-ui.css') }}" rel="stylesheet">
+<script src="{{ static_url('jquery-ui/jquery-ui.js') }}" type="text/javascript"></script>
+<!-- it's also recommended to include jQuery UI Datepicker language files, but I can't find them, so whatever -->
+
+<!-- now, include Simone -->
+<link href="{{ static_url('simone/simone.taskbar.css') }}" rel="stylesheet">
+<link href="{{ static_url('simone/simone.window.css') }}" rel="stylesheet">
+<script src="{{ static_url('simone/simone.taskbar.js') }}" type="text/javascript"></script>
+<script src="{{ static_url('simone/simone.window.js') }}" type="text/javascript"></script>
+<!-- include translations after widgets has been included -->
+<script src="{{ static_url('simone/i18n/simone.en.js') }}" type="text/javascript"></script>
+
+<style type="text/css" media="screen">
+#simulation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px;
+}
+svg {
+  font: 10px sans-serif;
+}
+
+.line {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000; 
+  shape-rendering: crispEdges;
+}
+</style>
+</head>
+<body>
+
+
+<div id="simulation">
+    <div id="time">
+    </div>
+</div>
+<H1>Multiplication Tester</H1>
+<div class="taskbar"></div>
+<div class="window"></div>
+<div id="input1"></div>
+<p>
+<div id="input2"></div>
+<div id="visualisation"></div>
+
+<!-- SLIDER CODE -->
+<p>
+  <label for="nRadius" 
+         style="display: inline-block; width: 240px; text-align: right">
+         Input B = <span id="nRadius-value">…</span>
+  </label>
+  <input type="range" min="-20" max="20" id="nRadius">
+</p>
+<!-- END OF SLIDER CODE -->
+
+<script src="{{ static_url('js/min_main.js') }}" type="text/javascript"></script>
+
+</body>
+</html>
